@@ -2,7 +2,7 @@
 A solution for UITextField/UITextView's keyboard cover view.
 
 # How to use
-```
+```objective-c
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
@@ -18,8 +18,9 @@ A solution for UITextField/UITextView's keyboard cover view.
 
 # Warn
 must set scrollView's delegate = nil in the dealloc, otherwirse YOSKeyboardAvoiding will crash.
-```
+```objective-c
 - (void)dealloc {
   _scrollView.delegate = nil;
 }
 ```
+welcome pr :)
