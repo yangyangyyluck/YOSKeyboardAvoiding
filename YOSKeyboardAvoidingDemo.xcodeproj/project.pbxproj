@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D885AC980A70689F2F1A2EB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3032C35F2A9C52AF3E41FB76 /* libPods.a */; };
+		DD544B9A1CBCF059003A7C59 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD544B991CBCF059003A7C59 /* main.m */; };
+		DD544B9D1CBCF059003A7C59 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD544B9C1CBCF059003A7C59 /* AppDelegate.m */; };
+		DD544BA01CBCF059003A7C59 /* YOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD544B9F1CBCF059003A7C59 /* YOSViewController.m */; };
+		DD544BA31CBCF059003A7C59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD544BA11CBCF059003A7C59 /* Main.storyboard */; };
+		DD544BA51CBCF059003A7C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD544BA41CBCF059003A7C59 /* Assets.xcassets */; };
+		DD544BA81CBCF059003A7C59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD544BA61CBCF059003A7C59 /* LaunchScreen.storyboard */; };
+		DD544BBB1CBCF096003A7C59 /* UITextField+YOSKeyboardAvioding.m in Sources */ = {isa = PBXBuildFile; fileRef = DD544BB11CBCF096003A7C59 /* UITextField+YOSKeyboardAvioding.m */; };
+		DD544BBC1CBCF096003A7C59 /* UITextView+YOSKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = DD544BB31CBCF096003A7C59 /* UITextView+YOSKeyboardAvoiding.m */; };
+		DD544BBD1CBCF096003A7C59 /* YOSKeyboardAvoiding.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DD544BB41CBCF096003A7C59 /* YOSKeyboardAvoiding.bundle */; };
+		DD544BBE1CBCF096003A7C59 /* YOSKeyboardAvoiding.m in Sources */ = {isa = PBXBuildFile; fileRef = DD544BB61CBCF096003A7C59 /* YOSKeyboardAvoiding.m */; };
+		DD544BBF1CBCF096003A7C59 /* YOSKeyboardAvoidingConst.m in Sources */ = {isa = PBXBuildFile; fileRef = DD544BB81CBCF096003A7C59 /* YOSKeyboardAvoidingConst.m */; };
+		DD544BC01CBCF096003A7C59 /* YOSKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD544BBA1CBCF096003A7C59 /* YOSKeyboardToolbar.m */; };
+		DD544BC61CBCF156003A7C59 /* YOSScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD544BC51CBCF156003A7C59 /* YOSScrollViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3032C35F2A9C52AF3E41FB76 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		44353589BCAFC6E0E6E26082 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		60CFC0D6EE69BB7FACD3B511 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DD544B951CBCF059003A7C59 /* YOSKeyboardAvoidingDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YOSKeyboardAvoidingDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD544B991CBCF059003A7C59 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DD544B9B1CBCF059003A7C59 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DD544B9C1CBCF059003A7C59 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DD544B9E1CBCF059003A7C59 /* YOSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YOSViewController.h; sourceTree = "<group>"; };
+		DD544B9F1CBCF059003A7C59 /* YOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YOSViewController.m; sourceTree = "<group>"; };
+		DD544BA21CBCF059003A7C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD544BA41CBCF059003A7C59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD544BA71CBCF059003A7C59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD544BA91CBCF059003A7C59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD544BB01CBCF096003A7C59 /* UITextField+YOSKeyboardAvioding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextField+YOSKeyboardAvioding.h"; sourceTree = "<group>"; };
+		DD544BB11CBCF096003A7C59 /* UITextField+YOSKeyboardAvioding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+YOSKeyboardAvioding.m"; sourceTree = "<group>"; };
+		DD544BB21CBCF096003A7C59 /* UITextView+YOSKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+YOSKeyboardAvoiding.h"; sourceTree = "<group>"; };
+		DD544BB31CBCF096003A7C59 /* UITextView+YOSKeyboardAvoiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+YOSKeyboardAvoiding.m"; sourceTree = "<group>"; };
+		DD544BB41CBCF096003A7C59 /* YOSKeyboardAvoiding.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YOSKeyboardAvoiding.bundle; sourceTree = "<group>"; };
+		DD544BB51CBCF096003A7C59 /* YOSKeyboardAvoiding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSKeyboardAvoiding.h; sourceTree = "<group>"; };
+		DD544BB61CBCF096003A7C59 /* YOSKeyboardAvoiding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSKeyboardAvoiding.m; sourceTree = "<group>"; };
+		DD544BB71CBCF096003A7C59 /* YOSKeyboardAvoidingConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSKeyboardAvoidingConst.h; sourceTree = "<group>"; };
+		DD544BB81CBCF096003A7C59 /* YOSKeyboardAvoidingConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSKeyboardAvoidingConst.m; sourceTree = "<group>"; };
+		DD544BB91CBCF096003A7C59 /* YOSKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSKeyboardToolbar.h; sourceTree = "<group>"; };
+		DD544BBA1CBCF096003A7C59 /* YOSKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSKeyboardToolbar.m; sourceTree = "<group>"; };
+		DD544BC41CBCF156003A7C59 /* YOSScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YOSScrollViewController.h; sourceTree = "<group>"; };
+		DD544BC51CBCF156003A7C59 /* YOSScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YOSScrollViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD544B921CBCF059003A7C59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D885AC980A70689F2F1A2EB /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3608A636B3578F7997B39718 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				60CFC0D6EE69BB7FACD3B511 /* Pods.debug.xcconfig */,
+				44353589BCAFC6E0E6E26082 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		DD544B8C1CBCF059003A7C59 = {
+			isa = PBXGroup;
+			children = (
+				DD544B971CBCF059003A7C59 /* YOSKeyboardAvoidingDemo */,
+				DD544B961CBCF059003A7C59 /* Products */,
+				3608A636B3578F7997B39718 /* Pods */,
+				F516C5AE3B5231E9D3EBE5FA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DD544B961CBCF059003A7C59 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD544B951CBCF059003A7C59 /* YOSKeyboardAvoidingDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD544B971CBCF059003A7C59 /* YOSKeyboardAvoidingDemo */ = {
+			isa = PBXGroup;
+			children = (
+				DD544B9B1CBCF059003A7C59 /* AppDelegate.h */,
+				DD544B9C1CBCF059003A7C59 /* AppDelegate.m */,
+				DD544BAF1CBCF096003A7C59 /* YOSKeyBoardAvioding */,
+				DD544BC41CBCF156003A7C59 /* YOSScrollViewController.h */,
+				DD544BC51CBCF156003A7C59 /* YOSScrollViewController.m */,
+				DD544B9E1CBCF059003A7C59 /* YOSViewController.h */,
+				DD544B9F1CBCF059003A7C59 /* YOSViewController.m */,
+				DD544BA11CBCF059003A7C59 /* Main.storyboard */,
+				DD544BA41CBCF059003A7C59 /* Assets.xcassets */,
+				DD544BA61CBCF059003A7C59 /* LaunchScreen.storyboard */,
+				DD544BA91CBCF059003A7C59 /* Info.plist */,
+				DD544B981CBCF059003A7C59 /* Supporting Files */,
+			);
+			path = YOSKeyboardAvoidingDemo;
+			sourceTree = "<group>";
+		};
+		DD544B981CBCF059003A7C59 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD544B991CBCF059003A7C59 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD544BAF1CBCF096003A7C59 /* YOSKeyBoardAvioding */ = {
+			isa = PBXGroup;
+			children = (
+				DD544BB41CBCF096003A7C59 /* YOSKeyboardAvoiding.bundle */,
+				DD544BB01CBCF096003A7C59 /* UITextField+YOSKeyboardAvioding.h */,
+				DD544BB11CBCF096003A7C59 /* UITextField+YOSKeyboardAvioding.m */,
+				DD544BB21CBCF096003A7C59 /* UITextView+YOSKeyboardAvoiding.h */,
+				DD544BB31CBCF096003A7C59 /* UITextView+YOSKeyboardAvoiding.m */,
+				DD544BB51CBCF096003A7C59 /* YOSKeyboardAvoiding.h */,
+				DD544BB61CBCF096003A7C59 /* YOSKeyboardAvoiding.m */,
+				DD544BB71CBCF096003A7C59 /* YOSKeyboardAvoidingConst.h */,
+				DD544BB81CBCF096003A7C59 /* YOSKeyboardAvoidingConst.m */,
+				DD544BB91CBCF096003A7C59 /* YOSKeyboardToolbar.h */,
+				DD544BBA1CBCF096003A7C59 /* YOSKeyboardToolbar.m */,
+			);
+			path = YOSKeyBoardAvioding;
+			sourceTree = "<group>";
+		};
+		F516C5AE3B5231E9D3EBE5FA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3032C35F2A9C52AF3E41FB76 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD544B941CBCF059003A7C59 /* YOSKeyboardAvoidingDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD544BAC1CBCF059003A7C59 /* Build configuration list for PBXNativeTarget "YOSKeyboardAvoidingDemo" */;
+			buildPhases = (
+				5302C94A018B65887EEB1828 /* Check Pods Manifest.lock */,
+				DD544B911CBCF059003A7C59 /* Sources */,
+				DD544B921CBCF059003A7C59 /* Frameworks */,
+				DD544B931CBCF059003A7C59 /* Resources */,
+				8C4A9CEBDE1F1F4C10768F2F /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YOSKeyboardAvoidingDemo;
+			productName = YOSKeyboardAvoidingDemo;
+			productReference = DD544B951CBCF059003A7C59 /* YOSKeyboardAvoidingDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD544B8D1CBCF059003A7C59 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = yy.inc;
+				TargetAttributes = {
+					DD544B941CBCF059003A7C59 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = DD544B901CBCF059003A7C59 /* Build configuration list for PBXProject "YOSKeyboardAvoidingDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD544B8C1CBCF059003A7C59;
+			productRefGroup = DD544B961CBCF059003A7C59 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD544B941CBCF059003A7C59 /* YOSKeyboardAvoidingDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD544B931CBCF059003A7C59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD544BA81CBCF059003A7C59 /* LaunchScreen.storyboard in Resources */,
+				DD544BA51CBCF059003A7C59 /* Assets.xcassets in Resources */,
+				DD544BA31CBCF059003A7C59 /* Main.storyboard in Resources */,
+				DD544BBD1CBCF096003A7C59 /* YOSKeyboardAvoiding.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5302C94A018B65887EEB1828 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8C4A9CEBDE1F1F4C10768F2F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD544B911CBCF059003A7C59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD544BBC1CBCF096003A7C59 /* UITextView+YOSKeyboardAvoiding.m in Sources */,
+				DD544BA01CBCF059003A7C59 /* YOSViewController.m in Sources */,
+				DD544BBB1CBCF096003A7C59 /* UITextField+YOSKeyboardAvioding.m in Sources */,
+				DD544B9D1CBCF059003A7C59 /* AppDelegate.m in Sources */,
+				DD544B9A1CBCF059003A7C59 /* main.m in Sources */,
+				DD544BBF1CBCF096003A7C59 /* YOSKeyboardAvoidingConst.m in Sources */,
+				DD544BC61CBCF156003A7C59 /* YOSScrollViewController.m in Sources */,
+				DD544BC01CBCF096003A7C59 /* YOSKeyboardToolbar.m in Sources */,
+				DD544BBE1CBCF096003A7C59 /* YOSKeyboardAvoiding.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DD544BA11CBCF059003A7C59 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD544BA21CBCF059003A7C59 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD544BA61CBCF059003A7C59 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD544BA71CBCF059003A7C59 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD544BAA1CBCF059003A7C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD544BAB1CBCF059003A7C59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD544BAD1CBCF059003A7C59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60CFC0D6EE69BB7FACD3B511 /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YOSKeyboardAvoidingDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangyangmd5.www.YOSKeyboardAvoidingDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DD544BAE1CBCF059003A7C59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44353589BCAFC6E0E6E26082 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = YOSKeyboardAvoidingDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangyangmd5.www.YOSKeyboardAvoidingDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD544B901CBCF059003A7C59 /* Build configuration list for PBXProject "YOSKeyboardAvoidingDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD544BAA1CBCF059003A7C59 /* Debug */,
+				DD544BAB1CBCF059003A7C59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD544BAC1CBCF059003A7C59 /* Build configuration list for PBXNativeTarget "YOSKeyboardAvoidingDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD544BAD1CBCF059003A7C59 /* Debug */,
+				DD544BAE1CBCF059003A7C59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD544B8D1CBCF059003A7C59 /* Project object */;
+}
