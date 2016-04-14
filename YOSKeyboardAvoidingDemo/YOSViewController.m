@@ -35,12 +35,6 @@
     self.pushButton.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:self.pushButton];
     [self.pushButton addTarget:self action:@selector(tappedPush) forControlEvents:UIControlEventTouchUpInside];
-    [self.pushButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.mas_equalTo(self.view);
-        make.size.mas_equalTo(CGSizeMake(100, 50));
-        make.top.mas_equalTo(70);
-    }];
-    
 
     UITextField *tf = [UITextField new];
     tf.borderStyle = UITextBorderStyleRoundedRect;
@@ -48,23 +42,9 @@
     tf.backgroundColor = [UIColor yellowColor];
     self.tf = tf;
     
-    [tf mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.pushButton.mas_bottom).offset(20);
-        make.size.mas_equalTo(CGSizeMake(200, 44));
-        make.centerX.mas_equalTo(self.view);
-    }];
-    
     self.contentView = [UIView new];
     self.contentView.backgroundColor = [UIColor purpleColor];
     [self.view addSubview:self.contentView];
-    
-    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(50);
-        make.right.mas_equalTo(-50);
-        make.centerX.mas_equalTo(self.view);
-        make.height.mas_equalTo(150);
-        make.bottom.mas_equalTo(self.view).offset(-20);
-    }];
     
     UITextField *tf2 = [UITextField new];
     tf2.borderStyle = UITextBorderStyleRoundedRect;
@@ -74,6 +54,24 @@
     [tf2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.size.mas_equalTo(tf);
         make.center.mas_equalTo(self.contentView);
+    }];
+    
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(200, 100));
+        make.bottom.mas_equalTo(self.view).offset(-20);
+    }];
+    
+    [tf mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.contentView.mas_top).offset(-20);
+        make.size.mas_equalTo(CGSizeMake(100, 50));
+        make.centerX.mas_equalTo(self.view);
+    }];
+    
+    [self.pushButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerX.mas_equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(100, 50));
+        make.bottom.mas_equalTo(tf.mas_top).offset(-20);
     }];
 }
 
