@@ -11,7 +11,6 @@
 #import "YOSKeyboardToolbar.h"
 #import "UITextField+YOSKeyboardAvioding.h"
 #import "UITextView+YOSKeyboardAvoiding.h"
-#import <objc/runtime.h>
 
 static YOSKeyboardAvoiding *_keyboardAvoiding;
 
@@ -360,8 +359,6 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     CGPoint point = CGPointMake(scrollView.contentOffset.x, offsetY);
     
     [UIView animateWithDuration:animationDurtion delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-    
-        [self log:[NSString stringWithFormat:@"\r\n\r\n_scrollWithOffsetY %@ --- \r\n\r\n", scrollView.delegate]];
         
         scrollView.contentOffset = point;
         
