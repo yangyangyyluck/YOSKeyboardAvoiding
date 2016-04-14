@@ -11,7 +11,7 @@
 
 #import <UIKit/UIKit.h>
 
-#ifndef DEBUG
+#ifdef DEBUG
     #define YOSLog(...) NSLog(__VA_ARGS__)
 #else
     #define YOSLog(...)

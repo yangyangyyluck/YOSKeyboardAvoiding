@@ -28,6 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [UIApplication sharedApplication].keyWindow.backgroundColor = [UIColor whiteColor];
+    
     self.pushButton = [UIButton new];
     [self.pushButton setTitle:@"push" forState:UIControlStateNormal];
     self.pushButton.backgroundColor = [UIColor lightGrayColor];
@@ -36,7 +38,7 @@
     [self.pushButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.view);
         make.size.mas_equalTo(CGSizeMake(100, 50));
-        make.top.mas_equalTo(100);
+        make.top.mas_equalTo(70);
     }];
     
 
@@ -47,7 +49,7 @@
     self.tf = tf;
     
     [tf mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.mas_equalTo(self.pushButton.mas_bottom).offset(100);
+        make.top.mas_equalTo(self.pushButton.mas_bottom).offset(20);
         make.size.mas_equalTo(CGSizeMake(200, 44));
         make.centerX.mas_equalTo(self.view);
     }];
@@ -61,7 +63,7 @@
         make.right.mas_equalTo(-50);
         make.centerX.mas_equalTo(self.view);
         make.height.mas_equalTo(150);
-        make.top.mas_equalTo(tf.mas_bottom).offset(100);
+        make.bottom.mas_equalTo(self.view).offset(-20);
     }];
     
     UITextField *tf2 = [UITextField new];
@@ -82,10 +84,27 @@
     
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"frame : %@", NSStringFromCGRect(self.view.frame));
+    
+    if (CGAffineTransformIsIdentity(self.view.transform)) {
+        NSLog(@"yes identity");
+    } else {
+        NSLog(@"no identity");
+    }
+    
+//    [self.view setNeedsUpdateConstraints];
+//    [self.view updateConstraintsIfNeeded];
+//    [self.view setNeedsLayout];
+//    [self.view layoutIfNeeded];
+//    [self.view setNeedsDisplay];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
     [YOSKeyboardAvoiding setAvoidingView:self.view];
+    [YOSKeyboardAvoiding setPadding:0];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

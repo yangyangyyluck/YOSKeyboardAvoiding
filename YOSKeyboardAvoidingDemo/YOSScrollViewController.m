@@ -117,7 +117,7 @@
     [super viewWillAppear:animated];
     
     [YOSKeyboardAvoiding setAvoidingView:self.scrollView];
-    [YOSKeyboardAvoiding setPadding:50];
+    [YOSKeyboardAvoiding setPadding:5];
     [YOSKeyboardAvoiding setShowToolbar:YES];
 }
 

@@ -177,6 +177,7 @@
 				TargetAttributes = {
 					DD544B941CBCF059003A7C59 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 9LUKWZ4MH4;
 					};
 				};
 			};
@@ -371,10 +372,11 @@
 			baseConfigurationReference = 60CFC0D6EE69BB7FACD3B511 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = YOSKeyboardAvoidingDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yangyangmd5.www.YOSKeyboardAvoidingDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangyangmd5.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -384,10 +386,11 @@
 			baseConfigurationReference = 44353589BCAFC6E0E6E26082 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = YOSKeyboardAvoidingDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yangyangmd5.www.YOSKeyboardAvoidingDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangyangmd5.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

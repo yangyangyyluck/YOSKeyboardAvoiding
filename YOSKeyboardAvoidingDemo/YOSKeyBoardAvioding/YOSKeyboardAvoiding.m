@@ -11,6 +11,7 @@
 #import "YOSKeyboardToolbar.h"
 #import "UITextField+YOSKeyboardAvioding.h"
 #import "UITextView+YOSKeyboardAvoiding.h"
+#import <objc/runtime.h>
 
 static YOSKeyboardAvoiding *_keyboardAvoiding;
 
@@ -28,6 +29,8 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
 @property (nonatomic, weak) UIView *avoidingView;
 
 @property (nonatomic, strong) NSMutableArray <__kindof UIView *>*triggerViews;
+
+@property (nonatomic, assign) UIInterfaceOrientation lastStatusBarOrientation;
 
 @property (nonatomic, strong) NSNotification *lastNotification;
 
@@ -267,10 +270,39 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     CGFloat max = ((size.width > size.height) ? size.width : size.height);
     CGFloat min = ((size.width < size.height) ? size.width : size.height);
     
-    if ([self _isLandscape]) {
-        return CGSizeMake(max, min);
+    CGFloat systemVersion = [[UIDevice currentDevice].systemVersion floatValue];
+    systemVersion = floor(systemVersion);
+    
+    // iOS8.x 特殊处理
+    if (systemVersion == 8) {
+
+        if (self.lastStatusBarOrientation != [[UIApplication sharedApplication] statusBarOrientation]) {
+            
+            self.lastStatusBarOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+            self.avoidingView.transform = CGAffineTransformIdentity;
+            
+            if ([self _isLandscape]) {
+                return CGSizeMake(min, max);
+            } else {
+                return CGSizeMake(max, min);
+            }
+            
+        } else {
+            if ([self _isLandscape]) {
+                return CGSizeMake(max, min);
+            } else {
+                return CGSizeMake(min, max);
+            }
+        }
+        
     } else {
-        return CGSizeMake(min, max);
+        
+        if ([self _isLandscape]) {
+            return CGSizeMake(max, min);
+        } else {
+            return CGSizeMake(min, max);
+        }
+        
     }
     
 }
@@ -366,6 +398,10 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     }
 }
 
+- (UIInterfaceOrientation)_currentInterfaceOrientation {
+    return [[UIApplication sharedApplication] statusBarOrientation];
+}
+
 - (void)_moveUIScrollViewWithAnimationDurtion:(NSTimeInterval)animationDurtion keyboardFrameEnd:(CGRect)keyboardFrameEnd {
     
     // 计算是否需要移动avoidingView
@@ -427,10 +463,12 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     
     // 计算是否需要移动avoidingView
     UIView *currentTriggerView = [self _currentTriggerView];
-    CGRect triggerViewRectInWindow = [currentTriggerView convertRect:currentTriggerView.bounds toView:nil];
+    CGRect triggerViewRectInWindow = [currentTriggerView convertRect:currentTriggerView.bounds toView:[UIApplication sharedApplication].keyWindow];
     
     // iOS7 下 convertRect to window 同样一直是Portrait模式下的坐标，需要转换
     triggerViewRectInWindow = [self _getOrientedRect:triggerViewRectInWindow];
+    
+    NSLog(@"triggerViewRectInWindow : %@", NSStringFromCGRect(triggerViewRectInWindow));
     
     CGFloat triggerViewMaxY = 0;
     
@@ -455,13 +493,14 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
             
         }];
     } else {
-        __weak UIView *avoidingView = _keyboardAvoiding.avoidingView;
+        
+        UIView *avoidingView = _keyboardAvoiding.avoidingView;
         [UIView animateWithDuration:animationDurtion delay:0 options:animationCurve << 16 animations:^{
             
             avoidingView.transform = CGAffineTransformIdentity;
             
         } completion:^(BOOL finished) {
-            
+
         }];
     }
 }
@@ -471,6 +510,10 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
 - (void)_keyboardWillChangeFrame:(NSNotification *)noti {
     
     if (!self.isTriggerView) return;
+    
+    if (self.lastStatusBarOrientation == UIInterfaceOrientationUnknown) {
+        self.lastStatusBarOrientation = [self _currentInterfaceOrientation];
+    }
     
     NSDictionary *userInfo = noti.userInfo;
     CGRect keyboardFrameBegin = [userInfo[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
@@ -483,6 +526,8 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     UIViewAnimationCurve animationCurve = [userInfo[UIKeyboardAnimationCurveUserInfoKey] integerValue];
     
     CGFloat animationDurtion = [userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue];
+    
+    NSLog(@"\r\n\r\n statusBarOrientation - %zi \r\n\r\n", [[UIApplication sharedApplication] statusBarOrientation]);
     
     CGSize screenSize = [self _screenSize];
     
