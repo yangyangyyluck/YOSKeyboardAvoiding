@@ -9,12 +9,13 @@
 #import "YOSScrollViewController.h"
 #import "Masonry.h"
 #import "YOSKeyboardAvoiding.h"
-#import "UITextField+YOSKeyboardAvioding.h"
-#import "UITextView+YOSKeyboardAvoiding.h"
+#import "YOSViewController.h"
 
 @interface YOSScrollViewController () <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
+
+@property (nonatomic, strong) UIButton *pushButton;
 
 @end
 
@@ -95,6 +96,18 @@
         make.top.mas_equalTo(_tv0.mas_bottom).offset(50);
     }];
     
+    self.pushButton = [UIButton new];
+    [self.pushButton setTitle:@"push" forState:UIControlStateNormal];
+    self.pushButton.backgroundColor = [UIColor lightGrayColor];
+    [self.scrollView addSubview:self.pushButton];
+    [self.pushButton addTarget:self action:@selector(tappedPush) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.pushButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.mas_equalTo(_tf1.mas_bottom).offset(20);
+        make.size.mas_equalTo(CGSizeMake(80, 50));
+        make.centerX.mas_equalTo(self.view);
+    }];
+    
     _tv2 = [UITextView new];
     _tv2.layer.borderWidth = 0.5;
     _tv2.layer.borderColor = [UIColor blackColor].CGColor;
@@ -123,6 +136,13 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [YOSKeyboardAvoiding resume];
+}
+
+- (void)tappedPush {
+    
+    YOSViewController *vc = [YOSViewController new];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {

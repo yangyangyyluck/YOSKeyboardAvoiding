@@ -30,6 +30,8 @@
     
     [UIApplication sharedApplication].keyWindow.backgroundColor = [UIColor whiteColor];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     self.pushButton = [UIButton new];
     [self.pushButton setTitle:@"push" forState:UIControlStateNormal];
     self.pushButton.backgroundColor = [UIColor lightGrayColor];
