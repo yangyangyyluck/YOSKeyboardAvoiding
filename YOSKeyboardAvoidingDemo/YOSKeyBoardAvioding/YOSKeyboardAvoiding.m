@@ -428,7 +428,8 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
         }
     } else {
         
-        CGFloat maxOffsetY = scrollView.contentSize.height - scrollView.frame.size.height;
+        // contentSize.height < frame.size.height 的时候不用移动
+        CGFloat maxOffsetY = MAX(scrollView.contentSize.height - scrollView.frame.size.height, 0);
         
         offsetY = MIN(maxOffsetY, self.scrollViewOffsetY);
         
