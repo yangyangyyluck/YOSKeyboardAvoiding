@@ -405,11 +405,13 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
         self.scrollViewOffsetY = scrollView.contentOffset.y;
         
         // offsetY > 0 triggerView会被键盘遮盖，肯定移动
-        // offsetY < 0 在triggerView 没有完全在avoidingView中显示的情况下会移动，移动到triggerView正好出现在屏幕上
+        // offsetY < 0 & (triggerView 没有完全在avoidingView中显示)的情况下会移动，移动到triggerView正好出现在屏幕上
         if (offsetY < 0) {
+            CGRect currentTriggerViewRectInScrollView = [[self _currentTriggerView] convertRect:[self _currentTriggerView].bounds toView:self.avoidingView];
+            
             CGFloat contentOffsetY = scrollView.contentOffset.y;
             CGFloat triggerViewHeight = [self _currentTriggerView].frame.size.height;
-            CGFloat triggerOffsetMaxY = CGRectGetMaxY([self _currentTriggerView].frame);
+            CGFloat triggerOffsetMaxY = CGRectGetMaxY(currentTriggerViewRectInScrollView);
             CGFloat scrollViewInsetY = scrollView.contentInset.top;
             
             CGFloat tempOffsetY = contentOffsetY + triggerViewHeight + scrollViewInsetY - triggerOffsetMaxY;
