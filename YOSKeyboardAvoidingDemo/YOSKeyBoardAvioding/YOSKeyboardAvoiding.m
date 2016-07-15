@@ -58,7 +58,7 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
 
 + (void)setAvoidingView:(UIView *)avoidingView {
     
-    NSArray *views = [self _getEduitSubviewsFromSuperView:avoidingView];
+    NSArray *views = [self _getEditSubviewsFromSuperView:avoidingView];
     
     [self setAvoidingView:avoidingView withTriggerViews:views];
 }
@@ -135,6 +135,24 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     [self _init];
     
     [_keyboardAvoiding.triggerViews removeObject:triggerView];
+    
+    if ([triggerView respondsToSelector:@selector(setInputAccessoryView:)]) {
+        [triggerView performSelector:@selector(setInputAccessoryView:) withObject:nil];
+    }
+    
+    NSArray *views = [self _getEditSubviewsFromSuperView:triggerView];
+    
+    if (views.count) {
+        [_keyboardAvoiding.triggerViews removeObjectsInArray:views];
+        
+        [views enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            if ([obj respondsToSelector:@selector(setInputAccessoryView:)]) {
+                [obj performSelector:@selector(setInputAccessoryView:) withObject:nil];
+            }
+            
+        }];
+    }
 }
 
 + (void)resume {
@@ -145,6 +163,9 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     [_keyboardAvoiding.triggerViews removeAllObjects];
     _keyboardAvoiding.avoidingView = nil;
     _keyboardAvoiding.lastNotification = nil;
+    
+    _keyboardAvoiding.padding = 0;
+    _keyboardAvoiding.isShowToolbar = YES;
 }
 
 #pragma mark - init
@@ -199,7 +220,7 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
 }
 
 + (void)_setupToolbar {
-    NSArray *views = [self _getEduitSubviewsFromSuperView:_keyboardAvoiding.avoidingView];
+    NSArray *views = [self _getEditSubviewsFromSuperView:_keyboardAvoiding.avoidingView];
     
     if (views.count >= 2) {
         [_keyboardAvoiding.toolbar showLeftRightButton];
@@ -233,7 +254,7 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
 
 #pragma mark - helpers
 
-+ (NSArray *)_getEduitSubviewsFromSuperView:(UIView *)superView {
++ (NSArray *)_getEditSubviewsFromSuperView:(UIView *)superView {
     // 获取UITextField/UITextView
     NSMutableArray *tempArrayM = [NSMutableArray array];
     
@@ -245,7 +266,7 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
             } else if ([obj isKindOfClass:[UITextView class]]) {
                 [tempArrayM addObject:obj];
             } else if ([obj isKindOfClass:[UIView class]]) {
-                [tempArrayM addObjectsFromArray:[self _getEduitSubviewsFromSuperView:obj]];
+                [tempArrayM addObjectsFromArray:[self _getEditSubviewsFromSuperView:obj]];
             }
             
         }];
