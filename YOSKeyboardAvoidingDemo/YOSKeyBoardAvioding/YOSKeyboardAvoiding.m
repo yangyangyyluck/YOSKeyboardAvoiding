@@ -411,7 +411,7 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     
     CGFloat triggerViewMaxY = 0;
     
-    // triggerView在屏幕中并没有完全显示的时候，且avoidingView 是普通的UIScrollView，移动的最大距离是MaxY
+    // triggerView在屏幕中并没有完全显示的时候，且avoidingView 是普通的UIScrollView
     triggerViewMaxY = CGRectGetMaxY(triggerViewRectInWindow);
     
     CGFloat offsetY = triggerViewMaxY + _keyboardAvoiding.padding - CGRectGetMinY(keyboardFrameEnd);
@@ -471,14 +471,15 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     
     CGFloat triggerViewMaxY = 0;
     
-    // triggerView在屏幕中并没有完全显示的时候，且avoidingView 是普通的UIScrollView，移动的最大距离是MaxY
+    // triggerView在屏幕中并没有完全显示的时候，且avoidingView 是普通的UIView
     triggerViewMaxY = CGRectGetMaxY(triggerViewRectInWindow);
     
     CGFloat offsetY = triggerViewMaxY + _keyboardAvoiding.padding - CGRectGetMinY(keyboardFrameEnd);
     
     [self log:[NSString stringWithFormat:@"\r\n\r\n offsetY : %f \r\n\r\n", offsetY]];
     
-    if (self.isKeyboardVisible) {
+    // offsetY > 0 时才需要移动
+    if (self.isKeyboardVisible && offsetY > 0) {
         
         [UIView animateWithDuration:animationDurtion delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
             
