@@ -478,8 +478,9 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     
     [self log:[NSString stringWithFormat:@"\r\n\r\n offsetY : %f \r\n\r\n", offsetY]];
     
-    // offsetY > 0 时才需要移动
-    if (self.isKeyboardVisible && offsetY > 0) {
+    // offsetY >= 0 时才需要移动
+    // = 0 也需要移动，因为有时会触发2次通知，第一次把view移动后，第二次到达的通知必然offsetY=0,如果只是>0移动则就会被还原
+    if (self.isKeyboardVisible && offsetY >= 0) {
         
         [UIView animateWithDuration:animationDurtion delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
             
