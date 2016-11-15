@@ -1,1 +1,5 @@
+target 'YOSKeyboardAvoidingDemo' do
+
 pod 'Masonry'
+
+end

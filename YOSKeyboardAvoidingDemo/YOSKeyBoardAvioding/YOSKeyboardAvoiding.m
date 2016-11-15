@@ -379,13 +379,15 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     
     CGPoint point = CGPointMake(scrollView.contentOffset.x, offsetY);
     
-    [UIView animateWithDuration:animationDurtion delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        
-        scrollView.contentOffset = point;
-        
-    } completion:^(BOOL finished) {
-        
-    }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(animationDurtion * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:animationDurtion delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
+            
+            scrollView.contentOffset = point;
+            
+        } completion:^(BOOL finished) {
+            
+        }];
+    });
 }
 
 - (nullable UIView *)_currentTriggerView {
@@ -423,7 +425,9 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     
     if (self.isKeyboardVisible) {
         
-        self.scrollViewOffsetY = scrollView.contentOffset.y;
+        if (offsetY != 0) {
+            self.scrollViewOffsetY = scrollView.contentOffset.y;
+        }
         
         // offsetY > 0 triggerView会被键盘遮盖，肯定移动
         // offsetY < 0 & (triggerView 没有完全在avoidingView中显示)的情况下会移动，移动到triggerView正好出现在屏幕上
@@ -444,10 +448,12 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
                 
                 [self _scrollWithOffsetY:offsetY durtion:animationDurtion];
             }
-        } else {
+        } else if (offsetY > 0) {
             offsetY = scrollView.contentOffset.y + offsetY;
             
             [self _scrollWithOffsetY:offsetY durtion:animationDurtion];
+        } else {
+            // offsetY = 0, do nothing..
         }
     } else {
         

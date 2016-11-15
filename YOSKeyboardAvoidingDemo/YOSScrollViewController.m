@@ -124,6 +124,14 @@
         make.bottom.mas_equalTo(_tv2.mas_bottom);
     }];
     
+    _tf0.text = @"1";
+    _tf1.text = @"2";
+    _tf2.text = @"3";
+    
+    _tv0.text = @"4";
+    _tv1.text = @"5";
+    _tv2.text = @"6";
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -147,14 +155,14 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-    CGFloat contentOffsetY = scrollView.contentOffset.y;
-    CGFloat triggerViewHeight = _tf2.frame.size.height;
-    CGFloat triggerOffsetMaxY = CGRectGetMaxY(_tf2.frame);
-    CGFloat scrollViewInsetY = scrollView.contentInset.top;
-    
-    CGFloat tempOffsetY = contentOffsetY + triggerViewHeight + scrollViewInsetY - triggerOffsetMaxY;
-    
-    NSLog(@"\r\n\r\n contentOffsetY : %f\r\n triggerViewHeight : %f\r\n triggerOffsetMaxY : %f\r\n scrollViewInsetY : %f\r\n tempOffsetY : %f \r\n\r\n",contentOffsetY, triggerViewHeight, triggerOffsetMaxY, scrollViewInsetY, tempOffsetY);
+//    CGFloat contentOffsetY = scrollView.contentOffset.y;
+//    CGFloat triggerViewHeight = _tf2.frame.size.height;
+//    CGFloat triggerOffsetMaxY = CGRectGetMaxY(_tf2.frame);
+//    CGFloat scrollViewInsetY = scrollView.contentInset.top;
+//    
+//    CGFloat tempOffsetY = contentOffsetY + triggerViewHeight + scrollViewInsetY - triggerOffsetMaxY;
+//    
+//    NSLog(@"\r\n\r\n contentOffsetY : %f\r\n triggerViewHeight : %f\r\n triggerOffsetMaxY : %f\r\n scrollViewInsetY : %f\r\n tempOffsetY : %f \r\n\r\n",contentOffsetY, triggerViewHeight, triggerOffsetMaxY, scrollViewInsetY, tempOffsetY);
 }
 
 - (void)dealloc {
