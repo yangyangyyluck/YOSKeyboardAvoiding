@@ -166,6 +166,13 @@ static YOSKeyboardAvoiding *_keyboardAvoiding;
     
     _keyboardAvoiding.padding = 0;
     _keyboardAvoiding.isShowToolbar = YES;
+    
+    _keyboardAvoiding.isTriggerView = NO;
+    _keyboardAvoiding.isKeyboardVisible = NO;
+    _keyboardAvoiding.scrollViewOffsetY = 0;
+    
+    _keyboardAvoiding.currentTriggerViewIndex = 0;
+    _keyboardAvoiding.lastStatusBarOrientation = UIInterfaceOrientationUnknown;
 }
 
 #pragma mark - init
